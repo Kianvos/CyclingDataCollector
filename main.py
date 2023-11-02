@@ -6,7 +6,6 @@ from apple_import import AppleImport
 from garmin_import import GarminImport
 
 
-# todo env
 def main():
     load_dotenv()
 

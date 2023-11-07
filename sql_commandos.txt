@@ -1,5 +1,10 @@
-#Totaal gereden op een bepaalde dag:
+#Totaal gereden op een bepaalde weekdag(maandag, dinsdag, woensdag):
 SELECT sum(distance)/1000, day_week.day from workout left join day_week on day_week.id = workout.day_id GROUP by day_week.id order by day_week.id;
 
 #Totaal gereden in een bepaalde maand:
 SELECT monthname(date) as maand, sum(distance)/1000 as kilometers from workout group by maand, month(date) order by month(date);
+
+#Totaal gereden op een bepaalde kalenderdag
+SELECT DAY(date) as dag, sum(distance)/1000 as kilometers from workout group by dag order by dag;
+
+
